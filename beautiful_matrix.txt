@@ -1,0 +1,23 @@
+0 0 0 0 0
+0 0 0 0 0
+0 0 1 0 0
+0 0 0 0 0
+0 0 0 0 0
+
+for i in range(1, 6):
+    ele = list(map(int, input().split()))
+    try:
+        col = ele.index(1) + 1
+        row = i
+    except ValueError:
+        pass
+loc = [row, col]
+rc, rr = 0, 0
+for i in loc:
+    if i > 3 and rc == 0:
+        rc = i - 3
+    elif i > 3 and rc != 0:
+        rr = i - 3
+    elif i < 3:
+        rr = abs(3 - i)
+print(rc + rr)
